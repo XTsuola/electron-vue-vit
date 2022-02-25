@@ -1,0 +1,39 @@
+{
+  "name": "electron-vue-vite",
+  "version": "1.0.0",
+  "main": "dist/main/index.cjs",
+  "author": "月色江南",
+  "license": "MIT",
+  "scripts": {
+    "dev": "node scripts/watch.mjs",
+    "prebuild": "vue-tsc --project packages/renderer/tsconfig.json --noEmit && node scripts/build.mjs",
+    "build": "electron-builder",
+    "debug": "npm run prebuild && vite ./packages/renderer"
+  },
+  "engines": {
+    "node": ">=14.17.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^2.1.0",
+    "electron": "16.0.8",
+    "electron-builder": "^22.14.5",
+    "typescript": "^4.5.5",
+    "vite": "^2.7.13",
+    "vite-plugin-resolve": "^1.4.4",
+    "vue": "^3.2.29",
+    "vue-tsc": "^0.31.1"
+  },
+  "env": {
+    "//": "Used in build scripts",
+    "PORT": 3344
+  },
+  "keywords": [
+    "vite",
+    "electron",
+    "vue3",
+    "rollup"
+  ],
+  "dependencies": {
+    "less": "^4.1.2"
+  }
+}
